@@ -1,0 +1,14 @@
+server.port: 3335
+
+spring.datasource:
+  driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+  url: jdbc:tc:postgresql:14.2:///test
+  username: multiple_choice_questions
+  password: zb3aN6u]JFk%9
+
+logging.level:
+  org.springframework.web: DEBUG
+  org.springframework.jdbc.core: TRACE
+  org.hibernate.SQL: DEBUG
+  org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+  org.springframework.security: DEBUG

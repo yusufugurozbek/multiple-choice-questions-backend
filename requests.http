@@ -1,0 +1,76 @@
+### Post courses
+POST {{host}}/course
+Content-Type: application/json
+Authorization: Basic {{username}} {{password}}
+
+[
+  {
+    "name": "Course 1"
+  },
+  {
+    "name": "Course 2"
+  }
+]
+
+
+### Get all courses
+GET {{host}}/course
+Authorization: Basic {{username}} {{password}}
+
+
+### Post questions
+
+POST {{host}}/question
+Content-Type: application/json
+Authorization: Basic {{username}} {{password}}
+
+[
+  {
+    "courseId": 2,
+    "question": "Question 1",
+    "correctAnswer": "Correct Answer",
+    "answerOne": "Answer 1",
+    "answerTwo": "Answer 2",
+    "answerThree": "Answer 3",
+    "answerFour": "Answer 4"
+  }
+]
+
+
+### Get all questions
+GET {{host}}/course/2/student/1
+Authorization: Basic {{username}} {{password}}
+
+
+### Post students
+POST {{host}}/student
+Content-Type: application/json
+Authorization: Basic {{username}} {{password}}
+
+[
+  {
+    "name": "Yusuf Ugur ÖZBEK"
+  }
+]
+
+
+### Answer questions
+
+PUT {{host}}/question?studentId=1
+Content-Type: application/json
+Authorization: Basic {{username}} {{password}}
+
+[
+  {
+    "questionId": 1,
+    "answer": "Correct Answer"
+  },
+  {
+    "questionId": 2,
+    "answer": "Correct Answer"
+  }
+]
+
+### Reset course
+DELETE {{host}}/course/1/student/1
+Authorization: Basic {{username}} {{password}}

@@ -1,0 +1,10 @@
+server.port: 3334
+
+spring:
+  jackson.default-property-inclusion: NON_NULL
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  security.user:
+    name: __USERNAME__REPLACE_ME__
+    password: __PASSWORD__REPLACE_ME__

@@ -1,0 +1,24 @@
+services:
+  mcq_backend:
+    image: 'mcq-backend:latest'
+    build: .
+    container_name: mcq_backend
+    depends_on:
+      - mcq_db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://mcq_db:5432/multiple_choice_questions
+      - SPRING_DATASOURCE_USERNAME=multiple_choice_questions
+      - SPRING_DATASOURCE_PASSWORD=zb3aN6u]JFk%9
+    ports:
+      - 3334:3334
+    restart: always
+
+  mcq_db:
+    image: 'postgres:latest'
+    container_name: mcq_db
+    environment:
+      - POSTGRES_USER=multiple_choice_questions
+      - POSTGRES_PASSWORD=zb3aN6u]JFk%9
+    ports:
+      - 5432:5432
+    restart: always
